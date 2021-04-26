@@ -1,0 +1,42 @@
+{% extends 'base/layout.html' %}
+
+{% block body %}
+    <h1> this is simple django template </h1>
+    <h3>accounts app</h3>
+    <ul>
+        <li>models:
+            <ul>
+                <li>User</li>
+            </ul>
+        </li>
+        <li>views:
+            <ul>
+                <li>login</li>
+                <li>register</li>
+                <li>both with basic template, messages and sucess redirect</li>
+                <li>logout with success redirect</li>
+            </ul>
+        </li>
+    </ul>
+    <h3>base app</h3>
+    <ul>
+        <li>models:
+            <ul>
+                <li>none</li>
+            </ul>
+        </li>
+        <li>views:
+            <ul>
+                <li>index</li>
+                <li>dashboard</li>
+            </ul>
+        </li>
+        <li>static:
+            <ul>
+                <li>basic sass files which export to /base/css/base_master.css</li>
+                <li>basic js file with collapsable topnav menu</li>
+                <li>layout template corresponding with css classes</li>
+            </ul>
+        </li>
+    </ul>
+{% endblock %}

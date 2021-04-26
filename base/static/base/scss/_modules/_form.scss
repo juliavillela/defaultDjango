@@ -1,0 +1,42 @@
+
+//set form colors by changing variables
+$form-wrapper-background: $background;
+$submit-button-background: $main-color;
+$submit-button-text: $background;
+
+
+// a simple form wrapper which displays a form as grid.
+
+.form-wrapper form{
+    // grid form input display
+    display: grid;
+    row-gap: .2rem;
+    .input-w-label{
+        //a flex box containing label and input.
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .3rem;
+
+        input{
+            min-height: 32px;
+            border: none;
+            &focus {
+                outline: none;
+                box-shadow: $inner-shadow;
+            }
+        }
+
+        input.submit-button{
+            color: $submit-button-text;
+            background-color: $submit-button-background;
+            &hover, &focus{
+                box-shadow: $drop-shadow;
+            }
+            &active{
+                color: $submit-button-background;
+                background-color: $submit-button-text;
+            }
+        }
+    }
+}

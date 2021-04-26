@@ -1,0 +1,31 @@
+{% extends 'accounts/form_page.html' %}
+    {% block form_title %}
+        register
+    {% endblock %}
+
+    {% block form %}
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            <div class='input-w-label'>
+                <label for='username'>username</label>
+                <input type='text' name='username'>
+            </div>
+            <div class='input-w-label'>
+                <label for='username'>email</label>
+                <input type='email' name='email'>
+            </div>
+            <div class='input-w-label'>
+                <label for='password' >password</label>
+                <input type='password' name='password'>
+            </div>
+            <div class='input-w-label'>
+                <label for='password' >password confirmation</label>
+                <input type='password' name='confirmation'>
+            </div>
+            <input type="submit" value='register' class='btn btn-outline'>
+        </form>
+    {% endblock %}
+
+    {% block form_footer %}
+        Already have an account? <a class="clean" href="{% url 'login' %}">login</a>
+    {% endblock %}

@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'base/js/base_master.js' %}" type="module"></script>
+    <link rel="stylesheet" href="{% static 'base/css/base_master.css'%}"></style>
+    <title>wiki</title>
+</head>
+<body>
+    <header>
+        <nav id="navBar" class="topnav">
+            <ul class="main">
+                <li><a href="{% url 'base:index'%}">BRAND</a></li>
+                <li id="menu-button"><a href="#">menu</a></li>
+            </ul>
+            <ul class="menu-items">
+                {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'logout'%}">logout</a></li>
+                    <li><a href="{% url 'base:dashboard'%}">dashboard</a></li>
+                {% else %}
+                    <li><a href="{% url 'login'%}">login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <div id="django-message-container">
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    <div class="container center-content">
+    {% block body %}
+    {% endblock %}
+    </div>
+</body>
+</html>

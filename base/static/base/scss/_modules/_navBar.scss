@@ -1,0 +1,67 @@
+@use 'reset';
+// set navbar color base by changing the variables on top
+$navbar-background: $main-color;
+$navbar-text: $background;
+$navbar-active: $accent-1;
+$navbar-dropdown-background: $main-color-sec;
+$navbar-dropdown-text: $main-color;
+
+//a simple navbar with ul and li containing anchors
+//collapses menu items in small screen and display menu button instead
+nav.topnav{
+    display: flex;
+    flex-direction: column;
+    background-color: $navbar-background;
+    justify-content: space-between;
+    ul{
+        @include reset.reset-ul;
+        padding: 1rem 2rem;
+        li{
+            color: $navbar-text;
+            margin-right: .4rem;
+        }
+        li.active{
+            color: $navbar-active
+        }
+    }
+    ul.main{
+        display: flex;
+        justify-content: space-between;
+        width: -webkit-fill-available;
+    }
+    ul.menu-items{
+        display: none;
+        background-color: $navbar-dropdown-background;
+        li{
+            padding: 1rem 0;
+            color: $navbar-dropdown-text;
+        }
+    }
+    ul.menu-items.expand{
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media screen and (min-width: 601px){
+        flex-direction: row;
+        padding: 1rem 2rem;
+        ul{
+            padding: 0;
+        }
+        ul.main{
+            width: fit-content;
+            li#menu-button{
+                display: none;
+            }
+        }
+        ul.menu-items{
+            background-color: $navbar-background;
+            display: flex;
+            li{
+                color: $navbar-text;
+                padding: 0;
+            }
+        }
+    }
+}
+

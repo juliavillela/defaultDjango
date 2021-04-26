@@ -1,0 +1,46 @@
+// Colors
+$warm-yellow: rgb(253, 227, 142);
+$neutral-offwhite: #f8f5f5;
+$white: white;
+$light-gray: #e4e4e0;
+$dark-gray: #777777;
+$black: #353532;
+
+// Corp-Colors
+$background: $neutral-offwhite !default;
+$main-color: $black !default;
+$main-color-sec: $light-gray!default;
+$accent-1: $dark-gray !default;
+$accent-2: $white !default;
+$accent-3: $warm-yellow!default;
+
+ 
+// Font
+$base-font-size: 1.8 !default;
+$base-font-family: Helvetica, Arial, Sans-Serif !default;
+$base-font-color: $black !default;
+ 
+// Border
+$base-border-radius: 0 !default;
+$rounded-border-radius: 10% !default;
+$base-border-color: $main-color !default;
+$base-border-style: solid;
+$base-border-width: 2px;
+
+$base-inner-border-width: 1px;
+$base-inner-border-color: $main-color-sec;
+
+$base-border-bundle: $base-border-style $base-border-width $base-border-color;
+$base-inner-border-bundle: $base-border-style $base-inner-border-width $base-border-color;
+
+
+//shadows
+$inner-shadow: inset 0px 2px 16px 0px $main-color-sec;
+$drop-shadow: 3px 4px 7px 0px $main-color-sec;
+
+
+//screen-size-breaks
+$lg-r-s: 801px;
+$md-r-e: 800px;
+$md-r-s: 601px;
+$sm-r-e: 600px;

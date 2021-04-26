@@ -1,0 +1,24 @@
+@use 'reset';
+
+#django-message-container{
+    position: absolute;
+    z-index: -1;
+    background-color: $main-color-sec;
+    width: 100%;
+    transition: margin-top .3s;
+    margin-top: -4em;
+    ul{
+        @include reset.reset-ul;
+        padding: .6rem;
+        li{
+            padding: .4rem;
+        }
+        li.success:before{
+                content: ":D  ";
+            }
+        li.warning:before{
+                content: ":/  ";
+            }
+    }
+}
+
