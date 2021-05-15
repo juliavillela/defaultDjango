@@ -1,0 +1,712 @@
+/* This is base theme file: it generates my-var to replace default bs variables
+    It selects and imports:
+        gray scale values
+        color declaration values.
+    then sets color theme roles and basic style.
+
+    The file is split in 3 levels: 
+    - BASE: which hold base value declarations that are not inhereted.
+        - changes to base, $gray-scale-name, or $rainbow-scale-name:
+    will be inherited by the other levels.
+
+    - SECOND LEVEL: 
+        - which assings my basic color roles
+        - it is meant to simplify the creation of new coherent themes.
+        - editions at second level will be inherited by 3rd level.
+        - these variables do not correspond to bs variables.
+
+    - THIRD LEVEL:
+        - this is where i set my default values that will reassign the default bootstrap variables.
+        - third level values will by default inherit from previous declarations
+        - but can also be specifically reassigned for each theme.
+*/
+/* 
+ gray scales color maps source.
+
+ map variable names:
+    $cold-gray-scale-map;
+    $warm-gray-scale-map;
+*/
+/* gray scale builder
+from selected value for gray-scale-map (defaults to warm)
+
+reassingns BS variables
+- $gray-XXX
+- $grays map
+- $white
+- $black
+- $color-contrast-dark
+- $color-contrast-light
+
+sets value for $my-gray-scale-colors.
+*/
+/* gray scale builder
+from selected value for rainbow-scale-map (defaults to bold)
+
+reassingns BS variables
+- $blue, $indigo, $purple, $pink, $yellow ....
+- $colors map
+
+sets value for $my-rainbow-scale-colors.
+*/
+/* inherited bs reassignements:
+    from gray scale through theme
+        $color-contrast-dark, $color-contrast-light
+        $white, $black, $gray-xxx, $grays map
+    from rainbow scale through theme:
+        $colors map, 
+        $blue, $indigo, $purple... etc
+
+*/
+/*SKIPPED
+    caret
+    transition
+    font family sans serif and monospace 
+    line height, font size and heading sizes
+*/
+:root {
+  --bs-blue: #004266ff;
+  --bs-indigo: #3a4563ff;
+  --bs-purple: #744760ff;
+  --bs-pink: #e84b5aff;
+  --bs-red: #d62828ff;
+  --bs-orange: #faa448ff;
+  --bs-yellow: #fcbf49ff;
+  --bs-green: #7fae70ff;
+  --bs-teal: #03b797ff;
+  --bs-cyan: #027d7fff;
+  --bs-primary: #004266ff;
+  --bs-secondary: #d0d8d7;
+  --bs-success: #03b797ff;
+  --bs-info: #d0d8d7;
+  --bs-warning: #fcbf49ff;
+  --bs-danger: #e84b5aff;
+  --bs-light: #f3f4f2;
+  --bs-dark: #496366;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #324b4f;
+  text-align: left;
+  background-color: #f3f4f2;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(27, 51, 55, 0);
+}
+
+hr {
+  margin: 1rem 0;
+  color: #d0d8d7;
+  background-color: currentColor;
+  border: 0;
+  opacity: 1;
+}
+
+hr:not([size]) {
+  height: 1px;
+}
+
+h6, h5, h4, h3, h2, h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: calc(1.375rem + 1.5vw);
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: calc(1.325rem + 0.9vw);
+}
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: calc(1.3rem + 0.6vw);
+}
+@media (min-width: 1200px) {
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+h4 {
+  font-size: calc(1.275rem + 0.3vw);
+}
+@media (min-width: 1200px) {
+  h4 {
+    font-size: 1.5rem;
+  }
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+abbr[title],
+abbr[data-bs-original-title] {
+  text-decoration: underline dotted;
+  cursor: help;
+  text-decoration-skip-ink: none;
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+ol,
+ul {
+  padding-left: 2rem;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+}
+
+blockquote {
+  margin: 0 0 1rem;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+small {
+  font-size: 0.875em;
+}
+
+mark {
+  padding: 0.2em;
+  background-color: #fcf8e3;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+a {
+  color: #324b4f;
+  text-decoration: none;
+}
+a:hover {
+  color: #004266ff;
+  text-decoration: none;
+}
+
+a:not([href]):not([class]), a:not([href]):not([class]):hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--bs-font-monospace);
+  font-size: 1em;
+  direction: ltr /* rtl:ignore */;
+  unicode-bidi: bidi-override;
+}
+
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto;
+  font-size: 0.875em;
+}
+pre code {
+  font-size: inherit;
+  color: inherit;
+  word-break: normal;
+}
+
+code {
+  font-size: 0.875em;
+  color: #d63384;
+  word-wrap: break-word;
+}
+a > code {
+  color: inherit;
+}
+
+kbd {
+  padding: 0.2rem 0.4rem;
+  font-size: 0.875em;
+  color: #fff;
+  background-color: #212529;
+  border-radius: 0.125rem;
+}
+kbd kbd {
+  padding: 0;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+figure {
+  margin: 0 0 1rem;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+table {
+  caption-side: bottom;
+  border-collapse: collapse;
+}
+
+caption {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #6c757d;
+  text-align: left;
+}
+
+th {
+  text-align: inherit;
+  text-align: -webkit-match-parent;
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+
+label {
+  display: inline-block;
+}
+
+button {
+  border-radius: 0;
+}
+
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+[role=button] {
+  cursor: pointer;
+}
+
+select {
+  word-wrap: normal;
+}
+select:disabled {
+  opacity: 1;
+}
+
+[list]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+button:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled) {
+  cursor: pointer;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: calc(1.275rem + 0.3vw);
+  line-height: inherit;
+}
+@media (min-width: 1200px) {
+  legend {
+    font-size: 1.5rem;
+  }
+}
+legend + * {
+  clear: left;
+}
+
+::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-text,
+::-webkit-datetime-edit-minute,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-year-field {
+  padding: 0;
+}
+
+::-webkit-inner-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  outline-offset: -2px;
+  -webkit-appearance: textfield;
+}
+
+/* rtl:raw:
+[type="tel"],
+[type="url"],
+[type="email"],
+[type="number"] {
+  direction: ltr;
+}
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+::file-selector-button {
+  font: inherit;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+output {
+  display: inline-block;
+}
+
+iframe {
+  border: 0;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* 
+ gray scales color maps source.
+
+ map variable names:
+    $cold-gray-scale-map;
+    $warm-gray-scale-map;
+*/
+/* gray scale builder
+from selected value for gray-scale-map (defaults to warm)
+
+reassingns BS variables
+- $gray-XXX
+- $grays map
+- $white
+- $black
+- $color-contrast-dark
+- $color-contrast-light
+
+sets value for $my-gray-scale-colors.
+*/
+/* gray scale builder
+from selected value for rainbow-scale-map (defaults to bold)
+
+reassingns BS variables
+- $blue, $indigo, $purple, $pink, $yellow ....
+- $colors map
+
+sets value for $my-rainbow-scale-colors.
+*/
+/* these contain the ovewrite for base level bs declarations */
+section {
+  margin-top: 2rem;
+}
+
+a {
+  font-weight: bold;
+}
+
+table {
+  margin: 1rem 0;
+}
+table thead th {
+  border-bottom: solid #d0d8d7 2px;
+  padding: 0.5rem;
+  text-align: center;
+}
+table tr {
+  transition: background-color 0.4s;
+}
+table tr:hover {
+  background-color: #d0d8d7;
+}
+table td {
+  border-bottom: solid #d0d8d7 2px;
+  padding: 0.5rem;
+}
+
+form {
+  width: fit-content;
+}
+form fieldset {
+  margin-top: 0.4rem;
+  min-height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6em;
+  align-items: center;
+  align-content: center;
+}
+
+input, select {
+  border: 2px solid #fff;
+  padding: 0 0.6rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2;
+  color: #fff;
+  background-color: #fff;
+  background-clip: padding-box;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  input, select {
+    transition: none;
+  }
+}
+input[type=file], select[type=file] {
+  overflow: hidden;
+}
+input[type=file]:not(:disabled):not([readonly]), select[type=file]:not(:disabled):not([readonly]) {
+  cursor: pointer;
+}
+input:focus, select:focus {
+  color: #fff;
+  background-color: #fff;
+  border-color: #fff;
+  outline: 0;
+  box-shadow: 0 0 0 2px #004266ff;
+}
+input::-webkit-date-and-time-value, select::-webkit-date-and-time-value {
+  height: 2em;
+}
+input::placeholder, select::placeholder {
+  color: #d0d8d7;
+  opacity: 1;
+}
+input:disabled, input[readonly], select:disabled, select[readonly] {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+
+input[type=checkbox] {
+  width: 1em;
+  height: 1em;
+  margin-top: 0.25em;
+  vertical-align: top;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid #fff;
+  padding: 0;
+  appearance: none;
+  color-adjust: exact;
+  border-radius: 0.15rem;
+}
+input[type=checkbox]:active {
+  filter: brightness(90%);
+}
+input[type=checkbox]:focus {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+input[type=checkbox]:checked {
+  background-color: #004266ff;
+  border-color: #0d6efd;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+
+select {
+  display: block;
+  width: 100%;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  appearance: none;
+}
+select:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+select[multiple], select[size]:not([size="1"]) {
+  padding-right: 0.75rem;
+  background-image: none;
+}
+select:disabled {
+  background-color: #e9ecef;
+}
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #212529;
+}
+
+button, input[type=submit] {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #f3f4f2;
+  background-color: #004266ff;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid #004266ff;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  button, input[type=submit] {
+    transition: none;
+  }
+}
+button:hover, input[type=submit]:hover {
+  color: #fff;
+}
+button:focus, input[type=submit]:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px #004266ff;
+}
+button:disabled, button.disabled, fieldset:disabled button, input[type=submit]:disabled, input[type=submit].disabled, fieldset:disabled input[type=submit] {
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+::marker {
+  color: #004266ff;
+}
+
+/*# sourceMappingURL=my_reboot.css.map */

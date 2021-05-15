@@ -1,6 +1,10 @@
 {% extends 'base/layout.html' %}
 
 {% block body %}
-    <h1>DASHBOARD</h1>
-    <h3>{{user.username}}</h3>
+<div class="card border-0 shadow">
+    <div class=card-body>
+        <h1 class="text-muted">DASHBOARD</h1>
+        <h3> hi, {{user.username}}</h3>
+    </div>
+</div>
 {% endblock %}

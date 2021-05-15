@@ -1,44 +1,34 @@
-{% load static %}
+{% extends 'base/pre_layout.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="{% static 'base/js/base_master.js' %}" type="module"></script>
-    <link rel="stylesheet" href="{% static 'base/css/base_master.css'%}"></style>
-    <title>wiki</title>
-</head>
-<body>
-    <header>
-        <nav id="navBar" class="topnav">
-            <ul class="main">
-                <li><a href="{% url 'base:index'%}">BRAND</a></li>
-                <li id="menu-button"><a href="#">menu</a></li>
-            </ul>
-            <ul class="menu-items">
-                {% if request.user.is_authenticated %}
-                    <li><a href="{% url 'logout'%}">logout</a></li>
-                    <li><a href="{% url 'base:dashboard'%}">dashboard</a></li>
-                {% else %}
-                    <li><a href="{% url 'login'%}">login</a></li>
-                {% endif %}
-            </ul>
+{% block layout %}
+<div>
+    <header col-1>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'base:index' %}">Brand</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'base:reboot' %}">reboot</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'base:classes' %}">classes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">login</a>
+                </li>
+                </ul>
+            </div>
+            </div>
         </nav>
     </header>
-    <div id="django-message-container">
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    </div>
-    <div class="container center-content">
+    <div class="container mt-4">
     {% block body %}
     {% endblock %}
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

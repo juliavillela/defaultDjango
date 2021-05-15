@@ -1,0 +1,48 @@
+{% extends 'base/layout.html' %}
+
+{% block body %}
+<section>
+    <h1>currently set color-theme</h1>
+    <p>with side-nav layout :D</p>
+    <hr>
+
+    <details>
+        <summary class="h4">
+            buttons
+        </summary>
+        <div class='container'>
+            <div>
+                <button class="btn btn-primary">primary</button>
+                <button class="btn btn-secondary">secondary</button>
+                <button class="btn btn-light">light</button>
+                <button class="btn btn-dark">dark</button>
+            </div>
+            <hr>
+            <div>
+                <button class="btn btn-outline-primary">primary</button>
+                <button class="btn btn-outline-secondary">secondary</button>
+                <button class="btn btn-outline-light">light</button>
+                <button class="btn btn-outline-dark">dark</button>
+            </div>
+        </div>
+        <hr>
+    </details>
+
+    <details>
+        <summary class="h4">
+            cards
+        </summary>
+        <div class='container'>
+            <div class="card">
+                <div class="card-header"> I'm header</div>
+                <div class="card-body"> I am the body content</div>
+                <div class="card-footer"> I am footer</div>
+            </div>
+            <hr>
+        </div>
+        <hr>
+    </details>
+
+</section>
+
+{% endblock %}
