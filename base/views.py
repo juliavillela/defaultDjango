@@ -22,6 +22,9 @@ def reboot(request):
 def classes(request):
     return render(request, 'base/classes.html')
 
+def variables(request):
+    return render(request, 'base/variables.html')
+
 @login_required
 def dashboard(request):
     return render(request, 'base/dashboard.html')

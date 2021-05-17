@@ -121,7 +121,7 @@
                 <p><b>butons:</b> make avaiable all the variants of bs buttons classes</p>
                 
             </div>
-            <a href="#" class='btn btn-outline-primary'>see more</a>
+            <a href="{% url 'base:classes' %}" class='btn btn-outline-primary'>see more</a>
         </div>
 
     </div>
@@ -144,10 +144,9 @@
             <h4>Basic methods</h4>
             <div class="card-body text-start p-2">
                 <p><b>scroll_to:</b> any anchor with class 'scroll_to' will have event listener that scrolls to element of id == anchor name</p>
-                <p><b>dropdown:</b> a page to view the styles in my custom reboot</p>
-                <p><b>active menu link:</b> a page to view the styles of my altered bs classes</p>
-                <p><b>menu button:</b> the user home page accessible only to logged users</p>
-                <p><b>django message as alert</b>:</b> the user home page accessible only to logged users</p>
+                <p><b>handleToggle:</b> uses data-target=(target element id) and data-toggle=(action name) to handle toggle event. [used in #menuButton to toggle navBar_menu display when collapsed]</p>
+                <p><b>active menu link:</b> the element of class nav-item and href property === current href is set to active.</p>
+                <p><b>handleMessages</b>:</b> on page-load, if there are django messages, displays messages for 10 seconds. messages contain a dismiss button for closing</p>
             </div>
         </div>
     </div>
