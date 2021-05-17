@@ -1,0 +1,125 @@
+{% extends 'base/layout.html' %}
+
+{% block body %}
+
+<div class="container mt-4">
+    <h1>My custom variables</h1>
+    <p>a visualization of the current values of some main varibles</p>
+    <hr>
+
+    <section class="container">
+        <h4>theme colors</h4>
+        <div class = "row">
+            <div class="col-md-4 col-sm-12">
+                <div class="visualize-color-scale grid-like">
+                    <div class="bg-light text-dark">light</div>
+                    <div class="bg-dark text-light">dark</div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="visualize-color-scale grid-like">
+                    <div class="bg-primary text-light">primary</div>
+                    <div class="bg-secondary text-white">secondary</div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div>
+                    <div class="status-pill bg-success text-white"></div>
+                    <b class="text-success">success!</b>
+                </div>
+                <div>
+                    <div class="status-pill bg-info text-white"></div>
+                    <b class="text-info">info!</b>
+                </div>
+                <div>
+                    <div class="status-pill bg-warning text-white"></div>
+                    <b class="text-warning">warning!</b>
+                </div>
+                <div>
+                    <div class="status-pill bg-danger text-white"></div>
+                    <b class="text-danger">danger!</b>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h4>graphics</h4>
+
+        <div class="d-flex flex-wrap gap-3 mb-3">
+
+            <div class="p-3 bg-white text-center border">
+                default border on white
+            </div>
+
+            <div class="p-3 text-center border">
+                default border on body
+            </div>
+
+            <div class="p-3 bg-light text-center border">
+                default border on light
+            </div>
+
+            <div class="p-3 bg-dark text-light text-center border">
+                default border on dark
+            </div>
+
+        </div>
+
+        <div class="d-flex flex-wrap gap-3 mb-3">
+            <div class="p-3 bg-white text-center shadow">
+                default box-shadow on white
+            </div>
+
+            <div class="p-3 text-center shadow">
+                default box-shadow on body
+            </div>
+
+            <div class="p-3 bg-light text-center shadow">
+                default box-shadow on light
+            </div>
+
+            <div class="p-3 bg-dark text-light text-center shadow">
+                default box-shadow on dark
+            </div>
+        </div>
+
+    </section>
+
+    <section class="container">
+        <h4>gray-scale</h4>
+        <div class="visualize-color-scale pallete">
+            <div class="white">white</div>
+            <div class="gray-100">gray-100</div>
+            <div class="gray-200">gray-200</div>
+            <div class="gray-300">gray-300</div>
+            <div class="gray-400">gray-400</div>
+            <div class="gray-500">gray-500</div>
+            <div class="gray-600">gray-600</div>
+            <div class="gray-700">gray-700</div>
+            <div class="gray-800">gray-800</div>
+            <div class="gray-900">gray-900</div>
+            <div class="black">black</div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h4>rainbow scale</h4>
+        <div class="visualize-color-scale pallete">
+            <div class="blue">blue</div>
+            <div class="indigo">indigo</div>
+            <div class="purple">purple</div>
+            <div class="pink">pink</div>
+            <div class="red">red</div>
+            <div class="orange">orange</div>
+            <div class="yellow">yellow</div>
+            <div class="green">green</div>
+            <div class="teal">teal</div>
+        </div>
+    </section>
+
+</div>
+
+
+
+{% endblock %}

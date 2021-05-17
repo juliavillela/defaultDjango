@@ -1,48 +1,150 @@
 {% extends 'base/layout.html' %}
-
+{% load static %}
 {% block body %}
-<section>
-    <h1>currently set color-theme</h1>
-    <p>with side-nav layout :D</p>
+<div class="container mt-4">
+    <h1>Imported bootstrap classes</h1>
+    <p>the appearances of components has been modified a litte because of the customized variables</p>
     <hr>
 
-    <details>
-        <summary class="h4">
-            buttons
-        </summary>
-        <div class='container'>
-            <div>
-                <button class="btn btn-primary">primary</button>
-                <button class="btn btn-secondary">secondary</button>
-                <button class="btn btn-light">light</button>
-                <button class="btn btn-dark">dark</button>
+    <section id='buttons' class='mb-5'>
+        <h3>buttons</h3>
+        <p>all options of bs buttons and how they look</p>
+        <hr>
+        <div class='row'>
+            <div class="col-lg-6 col-md-12 d-grid gap-2">
+                <h5>default variants:</h5>
+                <div><i class='text-muted'>[btn btn-$theme-color]</i></div>
+                
+                <label>small:</label>
+                <div>
+                    <button class="btn btn-primary btn-sm">primary</button>
+                    <button class="btn btn-secondary btn-sm">secondary</button>
+                    <button class="btn btn-light btn-sm">light</button>
+                    <button class="btn btn-dark btn-sm">dark</button>
+                </div>
+                
+                <label>regular:</label>
+                    <div>
+                        <button class="btn btn-primary">primary</button>
+                        <button class="btn btn-secondary">secondary</button>
+                        <button class="btn btn-light">light</button>
+                        <button class="btn btn-dark">dark</button>
+                    </div>
+
+                <label>large:</label>
+                <div>
+                    <button class="btn btn-primary btn-lg">primary</button>
+                    <button class="btn btn-secondary btn-lg">secondary</button>
+                    <button class="btn btn-light btn-lg">light</button>
+                    <button class="btn btn-dark btn-lg">dark</button>
+                </div>
             </div>
-            <hr>
-            <div>
-                <button class="btn btn-outline-primary">primary</button>
-                <button class="btn btn-outline-secondary">secondary</button>
-                <button class="btn btn-outline-light">light</button>
-                <button class="btn btn-outline-dark">dark</button>
+
+            <div class="col-lg-6 col-md-12 d-grid gap-2">
+                <h5>outlined variants:</h5>
+                <div><i class='text-muted'>[btn btn-outline-$theme-color]</i></div>
+                <label>small:</label>
+                <div>
+                    <button class="btn btn-outline-primary btn-sm">primary</button>
+                    <button class="btn btn-outline-secondary btn-sm">secondary</button>
+                    <button class="btn btn-outline-light btn-sm">light</button>
+                    <button class="btn btn-outline-dark btn-sm">dark</button>
+                </div>
+                <label>regular:</label>
+                <div>
+                    <button class="btn btn-outline-primary">primary</button>
+                    <button class="btn btn-outline-secondary">secondary</button>
+                    <button class="btn btn-outline-light">light</button>
+                    <button class="btn btn-outline-dark">dark</button>
+                </div>
+                <label>large:</label>
+                <div>
+                    <button class="btn btn-outline-primary btn-lg">primary</button>
+                    <button class="btn btn-outline-secondary btn-lg">secondary</button>
+                    <button class="btn btn-outline-light btn-lg">light</button>
+                    <button class="btn btn-outline-dark btn-lg">dark</button>
+                </div>
             </div>
         </div>
-        <hr>
-    </details>
+    </section>
 
-    <details>
-        <summary class="h4">
-            cards
-        </summary>
-        <div class='container'>
-            <div class="card">
-                <div class="card-header"> I'm header</div>
-                <div class="card-body"> I am the body content</div>
-                <div class="card-footer"> I am footer</div>
+    <section id='cards' class='mb-5'>
+        <h3>cards</h3>
+        <hr>
+        <div class='row'>
+            <div class="col-lg-3 col-md-4 col-sm-12 p-2">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title h5">I'm a regular card</div>
+                        <div class="card-subtitle text-muted"> I'm a muted subtitle</div>
+                    </div>
+                    <div class="card-body"> 
+                        <p class="card-text"> I am the body content of the card. inside a paragraph of class card-text that gives me an extra margin-bottom. but seems mostly useless</p>
+                    </div>
+                    <div class="card-footer"><button>i'm a footer button!</button> </div>
+                </div>
             </div>
-            <hr>
+
+            <div class="col-lg-3 col-md-4 col-sm-12 p-2">
+                <div class="card border-0">
+                    <div class="card-header">
+                        <div class="card-title h5">card with no border</div>
+                        <div class="card-subtitle text-muted"> I'm very subtle</div>
+                    </div>
+                    <div class="card-body"> 
+                        <p class="card-text"> I am the body content of the card. inside a paragraph of class card-text that gives me an extra margin-bottom. but seems mostly useless</p>
+                    </div>
+                    <div class="card-footer"><button class='btn btn-dark'>i'm a dark button!</button> </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12 p-2">
+                <div class="card shadow">
+                    <div class="card-header">
+                        <div class="card-title h5">card with shadow</div>
+                        <div class="card-subtitle text-muted"> I'm vintage.</div>
+                    </div>
+                    <div class="card-body"> 
+                        <p class="card-text"> I am the body content of the card. inside a paragraph of class card-text that gives me an extra margin-bottom. but seems mostly useless</p>
+                    </div>
+                    <div class="card-footer"><button class='btn btn-secondary'>i'm a secondary button!</button> </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12 p-2">
+                <div class="card border-0 shadow">
+                    <div class="card-header">
+                        <div class="card-title h5">no border + shadow</div>
+                        <div class="card-subtitle text-muted"> I'm very pleasant</div>
+                    </div>
+                    <div class="card-body"> 
+                        <p class="card-text"> I am the body content of the card. inside a paragraph of class card-text that gives me an extra margin-bottom. but seems mostly useless</p>
+                    </div>
+                    <div class="card-footer"><button class='btn btn-light'>i'm a light button!</button></div>
+                </div>
+            </div>
+
         </div>
-        <hr>
-    </details>
 
-</section>
-
+        <div class='row'>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-1">
+                <div class="card">
+                    <img src="{% static 'base/media/img_h.png'%}" class="card-img-top"></img>
+                    <div class="card-body">I'm a card with an horizontal image as top and a body with text </div>                
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-1">
+                <div class="card bg-light">
+                    <img src="{% static 'base/media/img_h.png'%}" class="card-img-top"></img>
+                    <div class="card-body">I'm a card with an horizontal image as top and a body with text. my background is light.</div>                
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-1">
+                <div class="card bg-dark border-0">
+                    <img src="{% static 'base/media/img_h.png'%}" class="card-img-top"></img>
+                    <div class="card-body text-light">my background is dark,  my text color is light and i have no borders</div>                
+                </div>
+            </div>
+    </section>  
+</div>
 {% endblock %}

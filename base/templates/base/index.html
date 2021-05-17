@@ -1,42 +1,155 @@
 {% extends 'base/layout.html' %}
 
 {% block body %}
+<div class="row bg-dark p-5 text-center text-light">
     <h1> this is simple django template </h1>
-    <h3>accounts app</h3>
-    <ul>
-        <li>models:
-            <ul>
-                <li>User</li>
-            </ul>
-        </li>
-        <li>views:
-            <ul>
-                <li>login</li>
-                <li>register</li>
-                <li>both with basic template, messages and sucess redirect</li>
-                <li>logout with success redirect</li>
-            </ul>
-        </li>
-    </ul>
-    <h3>base app</h3>
-    <ul>
-        <li>models:
-            <ul>
-                <li>none</li>
-            </ul>
-        </li>
-        <li>views:
-            <ul>
-                <li>index</li>
-                <li>dashboard</li>
-            </ul>
-        </li>
-        <li>static:
-            <ul>
-                <li>basic sass files which export to /base/css/base_master.css</li>
-                <li>basic js file with collapsable topnav menu</li>
-                <li>layout template corresponding with css classes</li>
-            </ul>
-        </li>
-    </ul>
+    <p>containing basic views, basic styling and a user model</p>
+    <hr class='mb-5'>
+    <div class="col-md-3 col-sm-12 mb-2">
+        <a name="accounts_app"class='btn btn-outline-light btn-lg scroll_to'>accounts app</a>
+    </div>
+    <div class="col-md-3 col-sm-12 mb-2">
+        <a name="base_app" class='btn btn-outline-light btn-lg scroll_to'>base app</a>
+    </div>
+    <div class="col-md-3 col-sm-12 mb-2">
+        <a name="styling" class=' btn btn-outline-light btn-lg scroll_to'>styling</a>
+    </div>
+    <div class="col-md-3 col-sm-12 mb-2">
+        <a name="scripts" class=' btn btn-outline-light btn-lg scroll_to'>scripts</a>
+    </div>
+</div>
+
+<section id="accounts_app" class="row p-3 text-center gap-3">
+    <h1>accounts app</h1>
+    <p>a generic app for handling user accounts and account-related views</p>
+    <hr>
+    <div class="container row">
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>app Models</h4>
+            <div class="card-body text-start p-2">
+                <p><b>User:</b> inherits django generic base user model</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>Views</h4>
+            <div class="card-body text-start p-2">
+                <p><b>login:</b> with basic template, messages and sucess redirect</p>
+                <p><b>logout:</b> with messages and sucess redirect</p>
+                <p><b>register:</b> with basic template, messages and sucess redirect</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>Static files</h4>
+            <div class="card-body text-start p-2">
+                <p><b>none:</b> account extends base template and inherits styling</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="base_app" class="row p-3 text-center gap-3 bg-light">
+    <h1>base app</h1>
+    <p>a generic base app containing style, layout.html and some views</p>
+    <hr>
+    <div class="container row">
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>app Models</h4>
+            <div class="card-body text-start p-2">
+                <p><b>none:</b> since the base app has no specific task it does not have a db</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>Views</h4>
+            <div class="card-body text-start p-2">
+                <p><b>index:</b> this page.</p>
+                <p><b>reboot:</b> a page to view the styles in my custom reboot</p>
+                <p><b>classes:</b> a page to view the styles of my altered bs classes</p>
+                <p><b>dashbord:</b> the user home page accessible only to logged users</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>Static files</h4>
+            <div class="card-body text-start p-2">
+                <p><b>my_custom_base_bs:</b> the full compiled custom bs files. it is less complete than the full bs file</p>
+                <p><b>my_reboot:</b> the custom reboot file, which is included in my_custom_base_bs</p>
+                <p><b>maste.jss:</b> a master js file which is imported as a module and inherts from js snippets</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="styling" class="row p-3 text-center gap-3">
+    <h1>Styling</h1>
+    <p>the stylesheet used is a customized version of bs 5.</p>
+    <hr>
+    <div class="container row">
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>Variables</h4>
+            <p class='text-start text-muted'>color and style variables are custumized and replace default bs values. witch are inherited into both the reboot and the components</p>
+            
+            <div class="card-body text-start p-2">
+                <p><b>gray-scale:</b> a custom gray scale replaces the bs gray.</p>
+                <p><b>color-definitions:</b> a custom rainbow replaces the bs $colors map.</p>
+                <p><b>theme-colors:</b> based on gray scale and color definitions, theme-colors are replaced.</p>
+                <p><b>Borders, hr, shadows:</b> graphics are also overwritten. like default border witdh and color, box-shadow marker colors and hr</p>
+            </div>
+            <a href="{% url 'base:variables' %}" class='btn btn-outline-primary'>see more</a>
+           
+        </div>
+
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>Reboot</h4>
+            <div class="card-body text-start p-2">
+                <p><b>bs native reboot:</b> is applied, but inherits from custom variables.</p>
+                <p><b>aditional tags:</b> some tags whitch are not modified in bs reboot, have custom reboot properties. (like tables and sections)</p>
+                <p><b>classes as mixin:</b> buttons, form inputs and some other tags, are rebooted to include more complex formatting which is based on the respective bs classes and inlcuded in the default tag as a mixin.</p>
+            </div>
+            <a href="{% url 'base:reboot' %}" class='btn btn-outline-primary'>see more</a>
+        </div>
+
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>Components</h4>
+            <div class="card-body text-start p-2">
+                <p><b>grid and containers:</b>make basic bs layout functionalities avaiable</p>
+                <p><b>type and utilities:</b> make avaiable the basic classes that set individual properties to an element</p>
+                <p><b>navbar:</b> navbar component is imported as is from bs</p>
+                <p><b>cards:</b> cards component is imported as is from bs</p>
+                <p><b>butons:</b> make avaiable all the variants of bs buttons classes</p>
+                
+            </div>
+            <a href="#" class='btn btn-outline-primary'>see more</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="scripts" class="row p-3 text-center gap-3 bg-light">
+    <h1>Scripts</h1>
+    <p>Some basic js functionality.</p>
+    <hr>
+    <div class="container row">
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>structure</h4>
+            <div class="card-body text-start p-2">
+                <p><b>static/master/master.js:</b> Is the main script file that is imported into layout.html as module</p>
+                <p><b>static/master/components/:</b> is a directory that holds all the different modules imported into master</p>
+            </div>
+        </div>
+
+        <div class="col-md-8 col-sm-12 p-2">
+            <h4>Basic methods</h4>
+            <div class="card-body text-start p-2">
+                <p><b>scroll_to:</b> any anchor with class 'scroll_to' will have event listener that scrolls to element of id == anchor name</p>
+                <p><b>dropdown:</b> a page to view the styles in my custom reboot</p>
+                <p><b>active menu link:</b> a page to view the styles of my altered bs classes</p>
+                <p><b>menu button:</b> the user home page accessible only to logged users</p>
+                <p><b>django message as alert</b>:</b> the user home page accessible only to logged users</p>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
