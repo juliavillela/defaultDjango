@@ -24,7 +24,7 @@ SECRET_KEY = 'mt$oas*7^9h%p9-==f8)h-aw+h3o+f$94lpo_++z-epfn7z4hm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1', '<HEROKU_URL>']
+ALLOWED_HOSTS = ['localhost','127.0.0.1', 'my-django-template.herokuapp.com']
 
 
 # Application definition
