@@ -1383,6 +1383,33 @@ sets value for $my-rainbow-scale-colors.
     max-width: 1320px;
   }
 }
+.fade {
+  transition: opacity 0.15s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade {
+    transition: none;
+  }
+}
+.fade:not(.show) {
+  opacity: 0;
+}
+
+.collapse:not(.show) {
+  display: none;
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .collapsing {
+    transition: none;
+  }
+}
+
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
@@ -7060,6 +7087,36 @@ sets value for $my-rainbow-scale-colors.
     display: none !important;
   }
 }
+/* 
+ gray scales color maps source.
+
+ map variable names:
+    $cold-gray-scale-map;
+    $warm-gray-scale-map;
+*/
+/* gray scale builder
+from selected value for gray-scale-map (defaults to warm)
+
+reassingns BS variables
+- $gray-XXX
+- $grays map
+- $white
+- $black
+- $color-contrast-dark
+- $color-contrast-light
+
+sets value for $my-gray-scale-colors.
+*/
+/* gray scale builder
+from selected value for rainbow-scale-map (defaults to bold)
+
+reassingns BS variables
+- $blue, $indigo, $purple, $pink, $yellow ....
+- $colors map
+
+sets value for $my-rainbow-scale-colors.
+*/
+/* these contain the ovewrite for base level bs declarations */
 *,
 *::before,
 *::after {
@@ -7478,36 +7535,6 @@ progress {
   display: none !important;
 }
 
-/* 
- gray scales color maps source.
-
- map variable names:
-    $cold-gray-scale-map;
-    $warm-gray-scale-map;
-*/
-/* gray scale builder
-from selected value for gray-scale-map (defaults to warm)
-
-reassingns BS variables
-- $gray-XXX
-- $grays map
-- $white
-- $black
-- $color-contrast-dark
-- $color-contrast-light
-
-sets value for $my-gray-scale-colors.
-*/
-/* gray scale builder
-from selected value for rainbow-scale-map (defaults to bold)
-
-reassingns BS variables
-- $blue, $indigo, $purple, $pink, $yellow ....
-- $colors map
-
-sets value for $my-rainbow-scale-colors.
-*/
-/* these contain the ovewrite for base level bs declarations */
 section {
   margin-top: 2rem;
 }
@@ -7546,6 +7573,9 @@ form fieldset {
   gap: 0.6em;
   align-items: center;
   align-content: center;
+}
+form fieldset:disabled {
+  opacity: 40%;
 }
 
 input, select {
@@ -7694,6 +7724,12 @@ button:disabled, button.disabled, fieldset:disabled button, input[type=submit]:d
 .status-pill.info {
   background-color: #c9c9be;
 }
+.status-pill.danger {
+  background-color: #e84b5aff;
+}
+.status-pill.warning {
+  background-color: #fcbf49ff;
+}
 
 #django-message-container {
   position: absolute;
@@ -7736,6 +7772,101 @@ button:disabled, button.disabled, fieldset:disabled button, input[type=submit]:d
 }
 #django-message-container ul li.danger {
   background-color: #e84b5aff;
+}
+
+.visualize-color-scale {
+  margin: 1em 0;
+}
+.visualize-color-scale.grid-like div {
+  height: 60px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1rem;
+  margin: 1em;
+}
+.visualize-color-scale.pallete {
+  width: 100%;
+}
+.visualize-color-scale.pallete div {
+  width: -webkit-fill-available;
+  height: 30px;
+  color: transparent;
+  contain: content;
+  text-align: center;
+  vertical-align: middle;
+  transition: height 0.6s;
+}
+.visualize-color-scale.pallete div:hover {
+  color: #fff;
+  height: 60px;
+}
+.visualize-color-scale.containers {
+  flex-wrap: wrap;
+}
+.visualize-color-scale.containers div {
+  width: fit-content;
+  padding: 1rem;
+  height: fit-content;
+}
+.visualize-color-scale .blue {
+  background-color: #004266ff;
+}
+.visualize-color-scale .indigo {
+  background-color: #3a4563ff;
+}
+.visualize-color-scale .purple {
+  background-color: #744760ff;
+}
+.visualize-color-scale .pink {
+  background-color: #e84b5aff;
+}
+.visualize-color-scale .red {
+  background-color: #d62828ff;
+}
+.visualize-color-scale .orange {
+  background-color: #faa448ff;
+}
+.visualize-color-scale .yellow {
+  background-color: #fcbf49ff;
+}
+.visualize-color-scale .green {
+  background-color: #7fae70ff;
+}
+.visualize-color-scale .teal {
+  background-color: #03b797ff;
+}
+.visualize-color-scale .gray-100 {
+  background-color: #f3f4f2;
+}
+.visualize-color-scale .gray-200 {
+  background-color: #eaeae4;
+}
+.visualize-color-scale .gray-300 {
+  background-color: #ddddd3;
+}
+.visualize-color-scale .gray-400 {
+  background-color: #c9c9be;
+}
+.visualize-color-scale .gray-500 {
+  background-color: #b3b3a8;
+}
+.visualize-color-scale .gray-600 {
+  background-color: #929289;
+}
+.visualize-color-scale .gray-700 {
+  background-color: #7e7e76;
+}
+.visualize-color-scale .gray-800 {
+  background-color: #6a6a62;
+}
+.visualize-color-scale .gray-900 {
+  background-color: #565652;
+}
+.visualize-color-scale .white {
+  background-color: #fff;
+}
+.visualize-color-scale .black {
+  background-color: #333333;
 }
 
 /*# sourceMappingURL=my_custom_base_bs.css.map */
