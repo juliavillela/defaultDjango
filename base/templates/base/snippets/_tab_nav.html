@@ -1,0 +1,26 @@
+<!-- a tab container with tab nav and content -->
+
+<div id="tabs-container" class='bg-light' data-nav="#tab-nav" data-content="#tab-content">
+    <ul id="tab-nav" class="nav nav-tabs mt-2">
+            <li class="nav-item">
+                <a class="nav-link active" data-container="#tabs-container" data-target="#tab-content-1">content 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-container="#tabs-container" data-target="#tab-content-2">content 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-container="#tabs-container" data-target="#tab-content-3">content 3</a>
+            </li>
+    </ul>
+    <div id="tab-content" class="container p-3" class="bg-body">
+        <div id="tab-content-1" class='collapse show'>
+            Hello, i'm tab content 1
+        </div>
+        <div id="tab-content-2" class='collapse'>
+            Hello, i'm tab content 2
+        </div>
+        <div id="tab-content-3" class='collapse'>
+            Hello, i'm tab content 3
+        </div>
+    </div>  
+</div>

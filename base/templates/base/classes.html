@@ -68,6 +68,34 @@
         </div>
     </section>
 
+    <section id='tabs' class='mb-5'>
+        <h3>Tabs</h3>
+        <div id="tabs-container" data-nav="#tab-nav" data-content="#tab-content" class="bg-light">
+            <ul id="tab-nav" class="nav nav-tabs mt-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-container="#tabs-container" data-target="#tab-content-1">content 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-container="#tabs-container" data-target="#tab-content-2">content 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-container="#tabs-container" data-target="#tab-content-3">content 3</a>
+                    </li>
+            </ul>
+            <div id="tab-content" class="container p-3 bg-body">
+                <div id="tab-content-1" class='collapse show'>
+                    Hello, i'm tab content 1
+                </div>
+                <div id="tab-content-2" class='collapse'>
+                    Hello, i'm tab content 2
+                </div>
+                <div id="tab-content-3" class='collapse'>
+                    Hello, i'm tab content 3
+                </div>
+            </div>  
+        </div>
+    </section>
+    
     <section id='cards' class='mb-5'>
         <h3>cards</h3>
         <hr>
@@ -145,6 +173,11 @@
                     <div class="card-body text-light">my background is dark,  my text color is light and i have no borders</div>                
                 </div>
             </div>
-    </section>  
+    </section>
+
+
+
+
 </div>
+
 {% endblock %}
