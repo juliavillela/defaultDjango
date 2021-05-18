@@ -1,7 +1,7 @@
 import handleMessageContainer from './components/message.js'
 import {handleToggle} from './components/toggle.js'
 import {scroll_to} from './components/anchor_scroll.js'
-import {handleTabDisplay, setActiveMenuItem} from './components/navBar.js'
+import {handleTabDisplay, setActiveMenuItem} from './components/navigation.js'
 
 const current_href = window.location.href
 console.log(`pathname: ${current_href}`)
