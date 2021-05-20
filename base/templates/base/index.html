@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<section id="accounts_app" class="row p-3 text-center gap-3">
+<section id="accounts_app" class="row p-3 text-center gap-3 bg-light">
     <h1>accounts app</h1>
     <p>a generic app for handling user accounts and account-related views</p>
     <hr>
@@ -49,7 +49,7 @@
     </div>
 </section>
 
-<section id="base_app" class="row p-3 text-center gap-3 bg-light">
+<section id="base_app" class="row p-3 text-center gap-3">
     <h1>base app</h1>
     <p>a generic base app containing style, layout.html and some views</p>
     <hr>
@@ -77,6 +77,35 @@
                 <p><b>my_custom_base_bs:</b> the full compiled custom bs files. it is less complete than the full bs file</p>
                 <p><b>my_reboot:</b> the custom reboot file, which is included in my_custom_base_bs</p>
                 <p><b>maste.jss:</b> a master js file which is imported as a module and inherts from js snippets</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="base_app" class="row p-3 text-center gap-3 bg-light">
+    <h1>Api app</h1>
+    <p>an app with django rest framework</p>
+    <hr>
+    <div class="container row">
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>app Models</h4>
+            <div class="card-body text-start p-2">
+                <p><b>dummy:</b> a template model, with more complex properties</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>Views</h4>
+            <div class="card-body text-start p-2">
+                <p><b>index:</b> A regular html page that holds information about the api</p>
+                <p><b>api viewsets:</b> the rest-framework default api views for CRUD </p>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>Static files</h4>
+            <div class="card-body text-start p-2">
+                <p><b>fetch_methods/:</b> a directory that holds implementation for fetching and displaying api content</p>
             </div>
         </div>
     </div>
