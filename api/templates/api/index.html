@@ -1,0 +1,82 @@
+{% extends 'base/layout.html' %}
+
+{% block body %}
+
+<div class="container mt-4">
+    <h1>The api app</h1>
+    <p> this is a template api using django rest framework. </p>
+    <p class="text-muted long-text">the purpose of this template is to demonstrate all the modifications needed on the main project to run rest framework + some more complex models and how to handle them</p>
+    
+    <section id='cards' class='mb-5'>
+        <hr>
+        <div class='row'>
+
+            <div class="col-lg-3 col-md-4 col-sm-12 p-2">
+                <div class="card border-0 shadow">
+                    <div class="card-header">
+                        <div class="card-title h5">The dummy model</div>
+                        <div class="card-subtitle text-muted">the template db model used in this api</div>
+                    </div>
+                    <div class="card-body"> 
+                        <p class="card-text"> The dummy model</p>
+                    </div>
+                    <div class="card-footer"><button class='btn btn-light'>see api view</button></div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12 p-2">
+                <div class="card border-0 shadow">
+                    <div class="card-header">
+                        <div class="card-title h5">Adding rest framework to project</div>
+                        <div class="card-subtitle text-muted">the changes applied and how to undo them</div>
+                    </div>
+                    <div class="card-body"> 
+                        <p class="card-text"> adding rest framework to project edits the following generic files:</p>
+                        <ul>
+                            <li>requirements.txt: which must include all rest fmw requirements</li>
+                            <li>settings.py: #TBD</li>
+                            <li>on top of all the regular changes creating a new app requires: urls.py, INSTALLED_APPS etc.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer"><button class='btn btn-light'>see api view</button></div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-4 col-sm-12 p-2">
+                <div class="card border-0 shadow">
+                    <div class="card-header">
+                        <div class="card-title h5">Handling media and files</div>
+                        <div class="card-subtitle text-muted">the changes applied and how to undo them</div>
+                    </div>
+                    <div class="card-body"> 
+                        <p class="card-text"> adding rest framework to project edits the following generic files:</p>
+                        <ul>
+                            <li>requirements.txt: which must include all rest fmw requirements</li>
+                            <li>settings.py: #TBD</li>
+                            <li>on top of all the regular changes creating a new app requires: urls.py, INSTALLED_APPS etc.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer"><button class='btn btn-light'>see api view</button></div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12 p-2">
+                <div class="card border-0 shadow">
+                    <div class="card-header">
+                        <div class="card-title h5">Js fetch requests</div>
+                        <div class="card-subtitle text-muted">In order to actually use the api structure, fetch methods are added to js components</div>
+                    </div>
+                    <div class="card-body"> 
+                        <p class="card-text">inside js/components there is a new dir called display_api/ which holds all the methods related to handling the api. these are independent and can be deleted if the api is not in use.</p>
+                    </div>
+                    <div class="card-footer"><button class='btn btn-light'>see api view</button></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}
