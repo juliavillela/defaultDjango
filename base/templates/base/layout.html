@@ -2,8 +2,8 @@
 
 {% block layout %}
 <div>
-    <header col-1>
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <header>
+        <nav id="navBar" class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'base:index' %}">Brand</a>
             <button id="menuButton" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@
                 </li>
                 <li name='variables' class="nav-item">
                     <a class="nav-link" href="{% url 'base:variables' %}">variables</a>
-                </li>
+                </li> 
                 {% if request.user.is_authenticated %}
                     <li name='dashboard' class="nav-item">
                         <a class="nav-link" href="{% url 'base:dashboard' %}">dashboard</a>
