@@ -14,6 +14,7 @@ function setActiveMenuItem(current_path){
 function handleTabDisplay(tabs){
     // adds event listeners to all tab navs in tabs element
     for(let i=0; i<tabs.children.length; i++){
+        // this should not rely on first element child...
         let tab = tabs.children[i].firstElementChild;
         tab.addEventListener('click', (e) => {setActiveTab(e)})
     }
