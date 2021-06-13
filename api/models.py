@@ -2,6 +2,8 @@ import os
 from django.db import models
 from accounts.models import User
 
+import markdown
+
 def md_file_path(instance, filename):
     return 'user_{0}/{1}'.format(instance.user.id, filename)
 
@@ -19,3 +21,17 @@ class Dummy(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_content(self):
+        with open(self.md_file.path, 'r') as md_file:
+            text = md_file.read()
+        return text
+
+    def overwrite_content(self, content:str):
+        with open(self.md_file.path, 'w') as md_file:
+            md_file.write(content)
+
+    def get_html(self):
+        md_content = self.get_content()
+        html = markdown.markdown(md_content)
+        return html
