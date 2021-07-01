@@ -9,6 +9,11 @@ console.log(`pathname: ${current_href}`)
 document.addEventListener('DOMContentLoaded', function(){
     //methods called here will run on page-load
     
+    const dynamic_content = document.getElementsByClassName('dynamic_content')
+    for (let content_group of dynamic_content){
+        handleApiConnection(content_group, render_function)
+    }
+
     //sets menu toggler button event listener
     document.querySelector("#menuButton").addEventListener('click', e => handleToggle(e))
 
@@ -26,7 +31,9 @@ document.addEventListener('DOMContentLoaded', function(){
     for (let tab_group of tab_groups){
         handleTabDisplay(tab_group)
     }
-    
+
+
+
     //sets current page navlink to active, according to url
     setActiveMenuItem(current_href)
 })
