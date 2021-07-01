@@ -11,10 +11,8 @@ from api import serializers
 
 # Create your views here.
 def index(request):
+    """An explanation fo the api structure"""
     return render(request, 'api/index.html')
-
-def browse(request):
-    return render(request, 'api/browse.html')
 
 class DummyViewSet(viewsets.ModelViewSet):
     queryset = Dummy.objects.all()
