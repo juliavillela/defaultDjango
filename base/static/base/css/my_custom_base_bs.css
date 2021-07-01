@@ -7830,6 +7830,50 @@ button:disabled, button.disabled, fieldset:disabled button, input[type=submit]:d
   background-color: #fcbf49ff;
 }
 
+.document-wrapper .document-header {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+table.document-table td.document-title {
+  font-weight: bold;
+}
+table.document-table td.document-subtitle {
+  font-size: small;
+}
+
+.text-document {
+  max-width: 80ch;
+}
+.text-document h1, .text-document .h1 {
+  font-size: larger;
+  font-weight: bold;
+  margin-top: 2.5rem;
+}
+.text-document h2, .text-document .h2 {
+  margin-top: 2rem;
+  font-size: large;
+  font-weight: bold;
+}
+.text-document h3, .text-document .h3 {
+  margin-top: 1.5rem;
+  font-size: medium;
+  font-weight: bolder;
+}
+.text-document h4, .text-document .h4, .text-document h5, .text-document .h5, .text-document h6, .text-document .h6 {
+  margin-top: 1rem;
+  font-size: medium;
+  font-weight: bold;
+}
+.text-document pre {
+  margin: 1rem 0;
+  padding: 0.6rem 1rem;
+  background-color: #eaeae4;
+}
+.text-document code {
+  white-space: pre-wrap;
+}
+
 #django-message-container {
   position: absolute;
   z-index: 10;
