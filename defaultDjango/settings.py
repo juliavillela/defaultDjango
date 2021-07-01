@@ -32,6 +32,9 @@ ALLOWED_HOSTS = ['localhost','127.0.0.1', 'my-django-template.herokuapp.com']
 INSTALLED_APPS = [
     'accounts',
     'base',
+    'api',
+    'api_frontend',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -84,6 +87,9 @@ DATABASES = {
     }
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_METADATA_CLASS': 'rest_framework.metadata.SimpleMetadata'
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

@@ -1,0 +1,17 @@
+{% extends 'base/layout.html' %}
+{% load static %}
+
+{% block add_to_head %}
+    <script src="{% static 'api_frontend/js/api_master.js'%}" type="module"></script>
+{% endblock %}
+
+{% block body %}
+<!-- <div><h4 class="">i</h4>
+    <div class="summary fixed overlay collapse"></div>
+</div> -->
+<div class="container">
+    <div id="api_data_container">
+        <p>at some point i will contain api data!</p>
+    </div>
+</div>
+{% endblock %}

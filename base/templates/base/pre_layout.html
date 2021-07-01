@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="{% static 'base/js/base_master.js' %}" type="module"></script>
     <link rel="stylesheet" href="{% static 'base/css/my_custom_base_bs.css'%}"></style>
+    {% block add_to_head %} {% endblock %}
     <title>{%block title%}{% endblock %}</title>
 </head>
 
