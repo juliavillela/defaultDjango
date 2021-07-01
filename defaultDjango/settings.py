@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'accounts',
     'base',
     'api',
+    'api_frontend',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
