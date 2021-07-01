@@ -11,11 +11,17 @@ function setActiveMenuItem(current_path){
     }
 }
 
+// handleTabDisplay will add the setActiveTab event listener on all tab anchors
+// this will work on tab-containers made up of 
+    // tab-nav ul
+    // tab-container with a corresponding element child for each tab-nav li.
+// this should only happen if anchor element has data-target property.
 function handleTabDisplay(tabs){
-    // adds event listeners to all tab navs in tabs element
+    // adds event listeners to all tab-navs in tabs element
     for(let i=0; i<tabs.children.length; i++){
         // this should not rely on first element child...
         let tab = tabs.children[i].firstElementChild;
+
         tab.addEventListener('click', (e) => {setActiveTab(e)})
     }
 }
