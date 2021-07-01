@@ -9,16 +9,17 @@
     <div class="col-lg-8 col-md-12 col-sm-12 mb-4">
         <h4 class='text-center'>apps</h4>
         <hr>
-        <div class="d-flex justify-content-evenly">
+        <div class="d-flex flex-column flex-md-row justify-content-evenly">
             <a name="accounts_app"class='btn btn-outline-light btn-lg scroll_to'>accounts</a>
             <a name="base_app" class='btn btn-outline-light btn-lg scroll_to'>base</a>
             <a name="api_app" class=' btn btn-outline-light btn-lg scroll_to'>api</a>
+            <a name="api_frontend_app" class=' btn btn-outline-light btn-lg scroll_to'>api frontend</a>
         </div>
     </div>
     <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
         <h4 class='text-center'>static</h4>
         <hr>
-        <div class="d-flex justify-content-evenly">
+        <div class="d-flex flex-column flex-md-row justify-content-evenly">
             <a name="styling" class=' btn btn-outline-light btn-lg scroll_to'>styling</a>
             <a name="scripts" class=' btn btn-outline-light btn-lg scroll_to'>scripts</a>
         </div>
@@ -104,10 +105,10 @@
             <h4>Views</h4>
             <div class="card-body text-start p-2">
                 <p><b>index:</b> A regular html page that holds information about the api</p>
-                <a href="{% url 'api:api_index' %}" class='btn btn-outline-primary'>go to index</a>
                 <p><b>api viewsets:</b> the rest-framework default api views for CRUD </p>
-                <a href="{% url 'api:browse_api' %}" class='btn btn-outline-primary'>api view</a>
+         
             </div>
+            <a href="{% url 'api:api_index' %}" class='btn btn-outline-primary'>go to index</a>
         </div>
 
         <div class="col-md-4 col-sm-12 p-2">
@@ -119,7 +120,38 @@
     </div>
 </section>
 
-<section id="styling" class="row p-3 text-center gap-3">
+
+<section id="api_frontend_app" class="row p-3 text-center gap-3">
+    <h1>Api frontend app</h1>
+    <p>a vanilla js frontent for viewing the api data.</p>
+    <hr>
+    <div class="container row">
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>app Models</h4>
+            <div class="card-body text-start p-2">
+                <p><b>none</b> this is frontend only.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>Views</h4>
+            <div class="card-body text-start p-2">
+                <p><b>index:</b> the index holds a page with some extra js scripts that make it work like a single page application. it defaults to list view, where you can click to view each article in detail.</p>
+            </div>
+            <a href="{% url 'api_frontend:api_frontend_index' %}" class='btn btn-outline-primary'>view articles</a>
+        </div>
+
+        <div class="col-md-4 col-sm-12 p-2">
+            <h4>Static files</h4>
+            <div class="card-body text-start p-2">
+                <p><b>fetch_methods/:</b> a directory that holds implementation for fetching and displaying api content</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="styling" class="row p-3 text-center gap-3 bg-light">
     <h1>Styling</h1>
     <p>the stylesheet used is a customized version of bs 5.</p>
     <hr>
@@ -164,7 +196,7 @@
     </div>
 </section>
 
-<section id="scripts" class="row p-3 text-center gap-3 bg-light">
+<section id="scripts" class="row p-3 text-center gap-3">
     <h1>Scripts</h1>
     <p>Some basic js functionality.</p>
     <hr>
